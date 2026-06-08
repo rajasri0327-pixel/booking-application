@@ -15,7 +15,6 @@ exports.registerUser = async (req, res) => {
     const userExists = await User.findOne({ email });
     if (userExists) return res.status(400).json({ message: 'User already exists' });
 
-    // SECURE ADMIN RULE: Only grants admin if a matching secret key is provided in the request body
     let role = 'user';
     if (adminSecret && adminSecret === process.env.ADMIN_REGISTRATION_SECRET) {
       role = 'admin';
