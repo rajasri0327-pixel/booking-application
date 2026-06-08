@@ -5,12 +5,14 @@ const protect = (req, res, next) => {
   if (token && token.startsWith('Bearer')) {
     try {
       token = token.split(' ')[1];
-      const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret123');
+      const secret = process.env.JWT_SECRET || 'secret123';
+      const decoded = jwt.verify(token, secret);
       
-      // Decoded contains { id, role }
+      // Decoded contains { id, role, iat, exp }
       req.user = decoded;
       next();
     } catch (error) {
+      console.error('JWT Verification Error:', error.message);
       return res.status(401).json({ message: 'Not authorized, token failed' });
     }
   } else {

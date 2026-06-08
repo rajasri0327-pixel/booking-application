@@ -6,7 +6,7 @@ const generateToken = (id, role) => {
   if (!process.env.JWT_SECRET) {
     console.warn('WARNING: JWT_SECRET is not set. Using insecure default fallback.');
   }
-  return jwt.sign({ id, role }, process.env.JWT_SECRET || 'secret123', { expiresIn: '30d' });
+  return jwt.sign({ id: String(id), role }, process.env.JWT_SECRET || 'secret123', { expiresIn: '30d' });
 };
 
 exports.registerUser = async (req, res) => {
