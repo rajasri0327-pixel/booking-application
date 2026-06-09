@@ -1,0 +1,25 @@
+{
+  "name": "cinebook",
+  "version": "1.0.0",
+  "description": "Movie Booking Application",
+  "main": "server/server.js",
+  "scripts": {
+    "install-all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently \"npm --prefix server dev\" \"npm --prefix client start\"",
+    "start": "concurrently \"npm --prefix server start\" \"npm --prefix client start\"",
+    "server": "npm --prefix server start",
+    "client": "npm --prefix client start",
+    "build": "npm --prefix client build",
+    "build-all": "npm --prefix server install && npm --prefix client install && npm --prefix client build"
+  },
+  "keywords": [
+    "movie",
+    "booking",
+    "cinema"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
