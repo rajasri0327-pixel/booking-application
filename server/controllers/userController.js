@@ -3,10 +3,13 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const generateToken = (id, role) => {
-  if (!process.env.JWT_SECRET) {
-    console.warn('WARNING: JWT_SECRET is not set. Using insecure default fallback.');
+  const secret = process.env.JWT_SECRET;
+  if (!secret) {
+    // Fail fast so we don't sign tokens with an insecure fallback
+    throw new Error('JWT_SECRET is not set. Set JWT_SECRET environment variable before starting the server.');
   }
-  return jwt.sign({ id: String(id), role }, process.env.JWT_SECRET || 'secret123', { expiresIn: '30d' });
+  const userId = (id && typeof id.toString === 'function') ? id.toString() : String(id);
+  return jwt.sign({ id: userId, role }, secret, { expiresIn: '30d' });
 };
 
 exports.registerUser = async (req, res) => {
