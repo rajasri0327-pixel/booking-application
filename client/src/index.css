@@ -1,0 +1,229 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+/* =========================
+   APP LAYOUT
+========================= */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  background: #000000 !important;
+  border-bottom: 1px solid #222222;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #ffffff !important;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #e50914 !important;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+.form-control {
+  background: #111111 !important;
+  border: 1px solid #333333 !important;
+  color: #ffffff !important;
+}
+
+.form-control::placeholder {
+  color: #aaaaaa;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+  background: #e50914 !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background: #b80710 !important;
+}
+
+/* =========================
+   HERO BANNER
+========================= */
+.hero-banner {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.3)
+  );
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 60px;
+  left: 50px;
+  z-index: 10;
+}
+
+.hero-content h1 {
+  color: #ffffff !important;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-content p {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+}
+
+/* =========================
+   MOVIE CARDS
+========================= */
+.movie-card,
+.card {
+  background: #454748 !important;
+  border: 1px solid #333333 !important;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.movie-card:hover,
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.15);
+}
+
+.movie-card img,
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.card-body {
+  background: #111111;
+}
+
+.card-title {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #ffffff !important;
+}
+
+/* =========================
+   UPCOMING MOVIES
+========================= */
+.upcoming-section {
+  padding: 40px 0;
+}
+
+.upcoming-section h2 {
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.release-date {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* =========================
+   NO IMAGE PLACEHOLDER
+========================= */
+.no-image {
+  height: 350px;
+  background: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer-section {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-top: 1px solid #222222;
+}
+
+.footer-section h1,
+.footer-section h2,
+.footer-section h3,
+.footer-section h4,
+.footer-section h5,
+.footer-section h6,
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  color: #ffffff !important;
+}
+
+.footer-section a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section a:hover {
+  color: #e50914 !important;
+  padding-left: 5px;
+}
