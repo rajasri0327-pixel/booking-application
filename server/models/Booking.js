@@ -10,4 +10,9 @@ const bookingSchema = new mongoose.Schema({
   bookingDate: { type: String, required: true }
 }, { timestamps: true });
 
+bookingSchema.index(
+  { theatreName: 1, bookingDate: 1, showTime: 1, selectedSeats: 1 },
+  { unique: true, name: 'unique_seat_per_show' }
+);
+
 module.exports = mongoose.model('Booking', bookingSchema);
