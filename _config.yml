@@ -1,0 +1,4 @@
+# Keep dependency documentation out of the GitHub Pages/Jekyll build.
+exclude:
+  - server/node_modules
+  - client/node_modules
